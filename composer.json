@@ -1,0 +1,33 @@
+{
+    "name": "baptiste/kirby-image-block",
+    "description": "Custom image Block for Kirby CMS block editor",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "config": {
+        "optimize-autoloader": true
+    },
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Baptiste lhopitault",
+            "homepage": "https://repliq.fr"
+        }
+    ],
+    "extra": {
+        "installer-name": "file-block"
+    },
+    "support": {
+		"issues": "https://github.com/batgithub/kirby-image-block/issues",
+		"source": "https://github.com/batgithub/kirby-image-block"
+	},
+    "keywords": [
+        "kirby3",
+        "kirby3-cms",
+        "kirby3-plugin",
+        "custom-block",
+        "block-file"
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    }
+}

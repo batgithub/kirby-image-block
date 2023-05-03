@@ -1,0 +1,15 @@
+{
+    "name": "kirby-image-block",
+    "description": "Custom image block for Kirby CMS block editor",
+    "version": "1.0.0",
+    "postcss": {},
+
+    "scripts": {
+        "dev": "kirbyup src/index.js --watch",
+        "serve": "kirbyup serve src/index.js",
+        "build": "kirbyup src/index.js"
+    },
+    "devDependencies": {
+        "kirbyup": "latest"
+    }
+}

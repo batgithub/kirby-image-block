@@ -1,0 +1,56 @@
+name: field.blocks.image.name
+icon: image
+preview: image
+
+fields:
+  image:
+    label: field.blocks.image.name.label
+    type: files
+    multiple: false
+    accept: image/jpeg, image/png
+    help: field.blocks.image.name.help
+    image:
+      back: black
+
+  alt:
+    label: field.blocks.image.alt.label
+    type: text
+    inline: true
+    nodes: false
+    marks:
+      - bold
+      - strike
+      - link
+    icon: title
+    width: 1/2
+    help: field.blocks.image.alt.help
+
+  caption:
+    label: field.blocks.image.caption.label
+    type: writer
+    inline: true
+    nodes: false
+    marks:
+      - bold
+      - strike
+      - link
+    icon: text
+    width: 1/2
+    help: field.blocks.image.caption.help
+    inline: true
+  
+  size:
+    label: field.blocks.image.size.label
+    type: radio
+    default: default
+    options:
+      default: 
+        *: field.blocks.image.size.option.default
+      xl: 
+        *: field.blocks.image.size.option.xl
+      md: 
+        *: field.blocks.image.size.option.md
+      sm: 
+        *: field.blocks.image.size.option.sm
+      xs: 
+        *: field.blocks.image.size.option.xs
