@@ -14,7 +14,7 @@
         }
     ],
     "extra": {
-        "installer-name": "file-block"
+        "installer-name": "kirby-image-block"
     },
     "support": {
 		"issues": "https://github.com/batgithub/kirby-image-block/issues",
