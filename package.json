@@ -1,7 +1,7 @@
 {
     "name": "kirby-image-block",
     "description": "Custom image block for Kirby CMS block editor",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "postcss": {},
 
     "scripts": {
