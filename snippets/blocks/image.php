@@ -11,7 +11,7 @@ if ($src = $block->image()->toFile()) {
 ?>
 <?php if ($src) : ?>
     <figure class="block-image <?= $size ?>">
-        <div class="relative inline-block">
+        <div class="block-image-wrapper">
             <picture class="ratio-wrap" style="padding-top: <?= $imgRatio . "%" ?>">
                 <source srcset="<?= $src->srcset($thumb_name) ?>" type="image/webp">
                 <img loading="lazy" height="<?= $src->height() ?>" width="<?= $src->width() ?>" class="<?= $size ?>" src="<?= $src->thumb($thumb_name)->url() ?>" alt="<?= $block->alt() ?>">
