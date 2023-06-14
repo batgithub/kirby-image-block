@@ -15,6 +15,13 @@ The main feature is to select the size of an image.
 **Start buil process**</br>
 `npm run build`
 
+## How to install
+**With composer** :
+`composer require baptiste/kirby-image-block`
+
+**With source** :
+dowload from [https://github.com/batgithub/kirby-file-block/releases](https://github.com/batgithub/kirby-file-block/releases) then unzip and put in plugins folder
+
 ## Config file thumb
 Exemple of config for thumb to put in `config.php`
 ```php
