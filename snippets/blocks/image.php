@@ -1,7 +1,9 @@
 <?php
 
-$size    = $block->size();
-$thumb_name = $size->toString();
+$size = $block->size();
+$customSize = $block->maxwidthvalue()->toInt() ? 'style="--max-width:'.$block->maxwidthvalue()->toInt().$block->maxwidthunit().';"' : '';
+$thumb_name = $size;
+$alignement = $block->alignement()->isNotEmpty() ? 'text-'.$block->alignement() : 'text-left';
 
 
 if ($src = $block->image()->toFile()) {
@@ -9,24 +11,22 @@ if ($src = $block->image()->toFile()) {
 }
 
 ?>
-<?php if ($src) : ?>
-    <figure class="block-image <?= $size ?>">
-        <div class="block-image-wrapper">
-            <picture class="ratio-wrap" style="padding-top: <?= $imgRatio . "%" ?>">
-                <source srcset="<?= $src->srcset($thumb_name) ?>" type="image/webp">
-                <img loading="lazy" height="<?= $src->height() ?>" width="<?= $src->width() ?>" class="<?= $size ?>" src="<?= $src->thumb($thumb_name)->url() ?>" alt="<?= $block->alt() ?>">
-            </picture>
-            <a href="<?= $src->url() ?>" class="button-open" title="Ouvrir l'image en plein écran">
-                <svg viewBox="0 0 24 24" id="open_in_new" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z" />
-                </svg>
-            </a>
-        </div>
 
+
+<?php if ($src) : ?>
+    <figure class="reveal block-image <?= $size ?> <?= $alignement ?>" id="<?= $block->id() ?>"  >
+
+        <div class="reveal-1 wrapper relative inline-block" <?= $customSize ?>>
+            <picture class=" ratio-wrap" style="padding-top: <?= $imgRatio . "%" ?>">
+                <source srcset="<?= $src->srcset($thumb_name) ?>" type="image/webp">
+                <img loading="lazy" height="<?= $src->thumb($thumb_name)->height() ?>" width="<?= $src->thumb($thumb_name)->width() ?>" class="<?= $size ?>" src="<?= $src->thumb($thumb_name)->url() ?>" alt="<?= $block->alt() ?>">
+            </picture>
+        </div>
         <?php if ($block->caption()->isNotEmpty()) : ?>
-            <figcaption>
-                <?= $block->caption() ?>
-            </figcaption>
+        <figcaption class="reveal-2">
+            <?= $block->caption() ?>
+        </figcaption>
         <?php endif ?>
     </figure>
 <?php endif ?>
+

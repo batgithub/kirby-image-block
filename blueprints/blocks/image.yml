@@ -39,6 +39,21 @@ fields:
     help: field.blocks.image.caption.help
     inline: true
   
+  alignement:
+    label: field.blocks.image.alignement.label
+    type: toggles
+    default: left
+    options:
+      - value: left
+        text: Gauche
+        icon: text-left
+      - value: center
+        text: Centre
+        icon: text-center
+      - value: right
+        text: Droite
+        icon: text-right
+
   size:
     label: field.blocks.image.size.label
     type: radio
@@ -54,3 +69,24 @@ fields:
         *: field.blocks.image.size.option.sm
       xs: 
         *: field.blocks.image.size.option.xs
+      custom:
+        *: field.blocks.image.size.option.custom
+
+  
+  customsizevalue:
+    label: field.blocks.image.customsizevalue.label
+    type: number
+    width: 1/4
+    when:
+      size: custom
+  
+  customsizeunit:
+    label: field.blocks.image.customsizeunit.label
+    type: select
+    width: 1/4
+    default: %
+    options:
+      px: px
+      %: %
+    when:
+      size: custom
