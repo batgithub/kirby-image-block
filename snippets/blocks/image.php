@@ -1,7 +1,7 @@
 <?php
 
 $size = $block->size();
-$customSize = $block->maxwidthvalue()->toInt() ? 'style="--max-width:'.$block->maxwidthvalue()->toInt().$block->maxwidthunit().';"' : '';
+$customSize = $block->customsizevalue()->toInt() ? 'style="--max-width:'.$block->customsizevalue()->toInt().$block->customsizeunit().';"' : '';
 $thumb_name = $size;
 $alignement = $block->alignement()->isNotEmpty() ? 'text-'.$block->alignement() : 'text-left';
 

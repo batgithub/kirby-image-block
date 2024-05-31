@@ -22,6 +22,7 @@
 <script>
 
 export default {
+
     computed: {
         captionMarks() {
             return this.field("caption", { marks: true }).marks;
@@ -30,13 +31,15 @@ export default {
             return 'r-align-'+this.content.alignement || "r-align-left";
         },
         size() {
-            return this.content.size || false;
+            if(this.content.size !== "custom"){
+                return this.content.size || false;
+            }
         },
         maxwidthcustom() {
-            if(this.content.size == "custom"){
+            if(this.content.size === "custom"){
                 return this.content.customsizevalue + this.content.customsizeunit || false;
             }
-            return false;
+            return null;
         },
         src() {
             if (this.content.image[0] && this.content.image[0].url) {
