@@ -59,6 +59,7 @@ export default {
         font-size: var(--text-sm);
         padding-top: 0.5rem;
         
+        
     }
     .r-image-wrapper {
         display: flex;
